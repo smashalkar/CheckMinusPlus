@@ -10,6 +10,7 @@
 [ext_resource path="res://WIP/FightMenu.tscn" type="PackedScene" id=8]
 
 [node name="UI" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.530472
@@ -80,7 +81,7 @@ margin_left = 568.558
 margin_top = 0.139481
 margin_right = 574.558
 margin_bottom = 0.139481
-text = "Level 5"
+text = "B1F"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -91,12 +92,3 @@ margin_left = 567.312
 margin_top = 238.713
 margin_right = 659.312
 margin_bottom = 343.713
-
-[node name="TextBox" type="Panel" parent="."]
-margin_left = 155.929
-margin_top = 470.159
-margin_right = 804.929
-margin_bottom = 564.159
-__meta__ = {
-"_edit_use_anchors_": false
-}

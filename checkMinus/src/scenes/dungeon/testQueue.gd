@@ -5,6 +5,7 @@ enum {VOID = -1, EMPTY, OBSTACLE, ACTIVE, ITEM, OBJECT, END}
 var queue_total
 var index_pointer
 var turn_queue
+var UI
 
 signal level_end
 

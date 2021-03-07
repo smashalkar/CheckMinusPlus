@@ -64,6 +64,7 @@ func health_change(heal : bool, amount : int):
 		health += amount
 	else:
 		health -= amount
+	get_parent().health_mod()
 
 func boost(stat : int, mult : int):
 	modifiers[stat] += mult

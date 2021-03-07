@@ -10,19 +10,25 @@ export var statbase : Resource
 var id = "Main Guy"
 
 signal turn_end
+signal health_changed
 
 var tempheal : bool = false
+var UI
 
 func pre_turn():
 	pass
 
 func _ready(): 
+	UI = get_parent().UI
 	get_node("Sprite").texture = load("res://assets/playable/player.png")
 	$Stats.initialize(statbase)
+	connect("health_changed", UI, "_on_update_health")
+	health_mod()
 	#Set UI to 'show' here!
 
 func _input(_event): #SWITCH FROM INPUT BASED, SET PRIORITY IN STATS
 	if move_detected():
+		UI.show()
 		input_direction = get_input_direction()
 		
 		if !Input.is_action_pressed("ui_select"):
@@ -101,6 +107,10 @@ func attack_detected():
 func hit(dmg):
 	$UI.health_change($Stats.health - dmg)
 	$Stats.hit(dmg)
+
+func health_mod():
+	print("Mod called!")
+	emit_signal("health_changed", $Stats.max_health, $Stats.health)
 
 func toggle_menu():
 	"""

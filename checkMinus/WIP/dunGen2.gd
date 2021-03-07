@@ -3,13 +3,17 @@ extends "genFunc.gd"
 var level : int = 1
 const LEVEL_MAX = 15
 
+var UI #VALUE PASSED TILL HERE!
+
 func _ready():
 	#randomize()
-	#get_parent().get_node("CanvasLayer/UI").set_level(level)
+	UI = get_parent().get_node("CanvasLayer/UI")
+	$Generation.UI = UI
 	make_rooms()
 
 func _on_Generation_level_end():
 	print("Level clear!")
+	UI.hide()
 	level += 1
 	get_parent().get_node("CanvasLayer/UI").set_level(level)
 	if level <= LEVEL_MAX:
