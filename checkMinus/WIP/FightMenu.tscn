@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://WIP/FightMenu.gd" type="Script" id=1]
+
+[node name="FightMenu" type="Control"]
+margin_right = 95.0
+margin_bottom = 111.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="MarginContainer" parent="."]
+margin_right = 72.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 72.0
+margin_bottom = 80.0
+color = Color( 0.270588, 0.294118, 0.490196, 0.607843 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_right = 72.0
+margin_bottom = 80.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+margin_left = 5.0
+margin_top = 15.0
+margin_right = 67.0
+margin_bottom = 65.0
+
+[node name="Attack" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Hbox" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer/Attack"]
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer/Attack/Hbox"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer/Attack/Hbox"]
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Attack"
+
+[node name="Items" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 62.0
+margin_bottom = 32.0
+
+[node name="Hbox" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer/Items"]
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer/Items/Hbox"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer/Items/Hbox"]
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Items"
+
+[node name="Other" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 62.0
+margin_bottom = 50.0
+
+[node name="Hbox" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer/Other"]
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer/Other/Hbox"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer/Other/Hbox"]
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Other"

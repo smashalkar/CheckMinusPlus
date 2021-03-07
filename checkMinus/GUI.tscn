@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="GUI" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 600.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+margin_right = 600.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 600, 0 )
+color = Color( 0.698039, 0, 0, 1 )

@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/enemy/squitothumb.png" type="Texture" id=1]
+[ext_resource path="res://assets/playable/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/enemy/ratthumb.png" type="Texture" id=3]
+[ext_resource path="res://src/scenes/active/UI.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/active/TextEdit.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[node name="UI" type="Node2D"]
+z_index = 35
+z_as_relative = false
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+margin_left = -503.0
+margin_top = -288.347
+margin_right = -433.0
+margin_bottom = -3.34665
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = -500.534
+margin_top = 175.808
+margin_right = -62.5342
+margin_bottom = 290.808
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="entry1" type="Panel" parent="."]
+margin_left = -507.629
+margin_top = -295.666
+margin_right = -425.629
+margin_bottom = -213.666
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="entry2" type="Panel" parent="."]
+margin_left = -507.821
+margin_top = -193.57
+margin_right = -425.821
+margin_bottom = -111.57
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="entry3" type="Panel" parent="."]
+margin_left = -507.663
+margin_top = -89.0199
+margin_right = -452.663
+margin_bottom = -30.0199
+rect_scale = Vector2( 1.5, 1.5 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="RichTextLabel" parent="."]
+margin_left = -494.206
+margin_top = 182.137
+margin_right = -68.2056
+margin_bottom = 285.137
+bbcode_text = "PLACEHOLDER TEXT -  JUST SEND IT TO THE FRONT AND MAKE IT BIGGER! ALSO, ADJUST THE SCREEN SIZE THING SO THAT IT'S POSITIONED RIGHT IN A WINDOW AND IN FULL SCREEN"
+text = "PLACEHOLDER TEXT -  JUST SEND IT TO THE FRONT AND MAKE IT BIGGER! ALSO, ADJUST THE SCREEN SIZE THING SO THAT IT'S POSITIONED RIGHT IN A WINDOW AND IN FULL SCREEN"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="defocused1" type="TextureRect" parent="."]
+margin_left = -501.384
+margin_top = -282.247
+margin_right = -437.384
+margin_bottom = -218.247
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="defocused2" type="TextureRect" parent="."]
+margin_left = -499.591
+margin_top = -182.36
+margin_right = -435.591
+margin_bottom = -118.36
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="defocused3" type="TextureRect" parent="."]
+margin_left = -502.027
+margin_top = -83.6634
+margin_right = -456.027
+margin_bottom = -31.6634
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/UI/mpframe.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI/bars644.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/bars645.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/bars642.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/hpframe.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/bars643.png" type="Texture" id=6]
+[ext_resource path="res://WIP/UI.gd" type="Script" id=7]
+[ext_resource path="res://WIP/FightMenu.tscn" type="PackedScene" id=8]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.530472
+margin_bottom = 0.530457
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 16.0
+
+[node name="Bars" type="Control" parent="MarginContainer/VBoxContainer"]
+
+[node name="HP" type="TextureProgress" parent="MarginContainer/VBoxContainer/Bars"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_under = ExtResource( 6 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MP" type="TextureProgress" parent="MarginContainer/VBoxContainer/Bars"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_under = ExtResource( 3 )
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestInfo" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TestInfo"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/TestInfo/MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+draw_center = false
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TestInfo/MarginContainer/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 568.558
+margin_top = 0.139481
+margin_right = 574.558
+margin_bottom = 0.139481
+text = "Level 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FightMenu" parent="." instance=ExtResource( 8 )]
+visible = false
+margin_left = 567.312
+margin_top = 238.713
+margin_right = 659.312
+margin_bottom = 343.713
+
+[node name="TextBox" type="Panel" parent="."]
+margin_left = 155.929
+margin_top = 470.159
+margin_right = 804.929
+margin_bottom = 564.159
+__meta__ = {
+"_edit_use_anchors_": false
+}
