@@ -37,12 +37,9 @@ func get_cell_content(coordinates):
 func request_move(actor, direction):
 	var current_cell = world_to_map(actor.position)
 	var dest_cell = current_cell + direction
-
 	var dest_cell_type = get_cellv(dest_cell)
 	
-	#THIS APPROACH IS BUGGY
 	match dest_cell_type:
-		
 		VOID:
 			return update_position(actor, current_cell, dest_cell)
 
@@ -61,10 +58,10 @@ func request_move(actor, direction):
 		ACTIVE:
 			if get_cell_content(dest_cell) != null:
 				var content = get_cell_content(dest_cell)
-				if !(content.get_node("Stats").alliance == actor.get_node("Stats").alliance):
-					print("Swap would've happened here!")
-				else:
-					print("Cell %s contains %s! Can't pass!" % [dest_cell, content.name])
+				#if !(content.get_node("Stats").alliance == actor.get_node("Stats").alliance):
+					#print("Swap would've happened here!")
+				#else:
+					#print("Cell %s contains %s! Can't pass!" % [dest_cell, content.name])
 			else:
 				return update_position(actor, current_cell, dest_cell)
 

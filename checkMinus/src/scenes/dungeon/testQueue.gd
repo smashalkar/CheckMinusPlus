@@ -5,7 +5,9 @@ enum {VOID = -1, EMPTY, OBSTACLE, ACTIVE, ITEM, OBJECT, END}
 var queue_total
 var index_pointer
 var turn_queue
+
 var UI
+var Log
 
 signal level_end
 
@@ -31,15 +33,9 @@ func get_cell_content(coordinates):
 func request_move(actor, direction):
 	var current_cell = world_to_map(actor.position)
 	var dest_cell = current_cell + direction
-	
-	"""
-	print(dest_cell)
-	print(get_cell_content(Vector2(0,0)))
-	"""
-	
 	var dest_cell_type = get_cellv(dest_cell)
-	match dest_cell_type:
 
+	match dest_cell_type:
 		VOID:
 			print("Void hit!")
 			return update_position(actor, current_cell, dest_cell)
@@ -72,8 +68,7 @@ func request_move(actor, direction):
 			if actor.alliance == 0:
 				for child in get_children():
 					child.queue_free()
-				#We need to pass stats/inventory as far upwards as humanly possible!
-				print("Exit reached!")
+				#You need to pass stats/inventory as far upwards as humanly possible!
 				emit_signal("level_end")
 
 func update_position(actor, current_cell, dest_cell):

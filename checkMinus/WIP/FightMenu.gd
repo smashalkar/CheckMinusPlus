@@ -4,18 +4,26 @@ onready var select1 = $Control/CenterContainer/VBoxContainer/Attack/Hbox/Label
 onready var select2 = $Control/CenterContainer/VBoxContainer/Items/Hbox/Label
 onready var select3 = $Control/CenterContainer/VBoxContainer/Other/Hbox/Label
 
-var option_no
+var option_no = 0
 var open : bool = false
+var root
 
-# Called when the node enters the scene tree for the first time.
+signal back_to_player
+
+
 func _ready():
-	option_no = 0
+	root = get_parent().get_parent().get_parent()
+	connect("back_to_player", root, "_on_resume")
 	set_select()
-	pass # Replace with function body.
+	
+	#### USE THIS TO MAKE AN ATTACK MENU AND AN ITEM MENU ###
+	$Control/CenterContainer/VBoxContainer/Attack/Hbox/Label2.text = "Attack"
+	$Control/CenterContainer/VBoxContainer/Items/Hbox/Label2.text = "Items"
+	##### WHEEEEE #####
+
 
 func _input(_event):
 	if open == false and !Input.is_action_pressed("ui_focus_next"):
-		option_no = 0
 		set_select()
 	
 	if open == true:
@@ -34,22 +42,26 @@ func _input(_event):
 			set_select()
 	
 	if Input.is_action_just_pressed("ui_focus_next") and open == true:
-		option_no = 0
-		get_parent().toggle_menu()
+		open = false
+		self.hide()
+		emit_signal("back_to_player")
 
 func set_select():
 	select1.text = ""
 	select2.text = ""
 	select3.text = ""
+	
 	if option_no == 0:
 		select1.text = ">"
 		select2.text = ""
 		select3.text = ""
+	
 	if option_no == 1:
-			select1.text = ""
-			select2.text = ">"
-			select3.text = ""
+		select1.text = ""
+		select2.text = ">"
+		select3.text = ""
+	
 	if option_no == 2:
-			select1.text = ""
-			select2.text = ""
-			select3.text = ">"
+		select1.text = ""
+		select2.text = ""
+		select3.text = ">"

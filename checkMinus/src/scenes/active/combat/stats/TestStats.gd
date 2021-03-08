@@ -61,10 +61,9 @@ func get_mana():
 
 func health_change(heal : bool, amount : int):
 	if heal:
-		health += amount
+		set_health(health + amount)
 	else:
-		health -= amount
-	get_parent().health_mod()
+		set_health(health - amount)
 
 func boost(stat : int, mult : int):
 	modifiers[stat] += mult

@@ -1,17 +1,10 @@
 extends Node
 
+var player
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$Dungeon.UI = $CanvasLayer/UI
-	pass # Replace with function body.
+	$Dungeon.Log = $CanvasLayer/Control
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_resume():
+	player.set_process_input(true)

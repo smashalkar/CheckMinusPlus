@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://WIP/UI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://WIP/TestDun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TestGame.gd" type="Script" id=3]
+[ext_resource path="res://LogBox.tscn" type="PackedScene" id=4]
 
 [node name="TestGame" type="Node"]
 script = ExtResource( 3 )
@@ -18,6 +19,9 @@ anchor_right = 0.999311
 anchor_bottom = 1.00118
 margin_left = 0.705292
 margin_right = 0.705322
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.701961, 0.701961, 0.701961, 1 )

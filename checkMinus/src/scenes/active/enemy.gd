@@ -21,14 +21,19 @@ var move_style : int
 var noise_range = 3
 var attk_range = 1
 var id
+var Log
 
 var target = null
 
+signal log_active
 
 func _ready():
 	Map = get_parent()
+	Log = get_parent().Log
 	$Stats.initialize(statbase)
 	asleep = true
+
+	connect("log_active", Log, "_on_log_entry")
 	
 func _init_texture():
 		
@@ -49,18 +54,18 @@ func _init_texture():
 func pre_turn():
 	if asleep == true: 
 		if find_player(noise_range):
-			print("%s woke up!" % [$Stats.id])
+			emit_signal("log_active", "%s woke up!" % [$Stats.id], true)
 			asleep = false
 	return null
 
 func act():
 	pass
-	"""
 	if !asleep:
 		if find_player(attk_range):
 			new_direction()
-			print("%s attacked!" % [id])
+			emit_signal("log_active", "%s attacked!" % [id], false)
 			$Attacks.attack(1)
+			
 
 		elif find_player(noise_range):
 			new_direction()
@@ -73,10 +78,10 @@ func act():
 				asleep = true
 			else:
 				print("%s is idling!" % [id])
-"""
+
 
 func on_death():
-	print($Stats.id, " fainted!")
+	emit_signal("log_active", $Stats.id + " fainted!", true)
 	self.queue_free()
 	Grid.set_cellv(self.position, CELL_TYPES.EMPTY)
 	Grid.re_order()
@@ -121,3 +126,7 @@ func new_direction():
 				if x != 1 or y != 1:
 					#print(Vector2(x, y))
 """
+
+func hit(dmg):
+	emit_signal("log_active", id + " took " + String(dmg) + " damage!", true)
+	$Stats.hit(dmg)

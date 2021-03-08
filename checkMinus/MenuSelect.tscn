@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="Attack" type="CenterContainer"]
+margin_right = 62.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hbox" type="HBoxContainer" parent="."]
+margin_right = 62.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Hbox"]
+margin_right = 8.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 8, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = ">"
+
+[node name="Label2" type="Label" parent="Hbox"]
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )

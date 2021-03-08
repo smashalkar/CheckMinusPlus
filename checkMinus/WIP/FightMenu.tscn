@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://WIP/FightMenu.gd" type="Script" id=1]
+[ext_resource path="res://MenuSelect.tscn" type="PackedScene" id=2]
 
 [node name="FightMenu" type="Control"]
 margin_right = 95.0
@@ -32,28 +33,7 @@ margin_top = 15.0
 margin_right = 67.0
 margin_bottom = 65.0
 
-[node name="Attack" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
-margin_right = 62.0
-margin_bottom = 14.0
-
-[node name="Hbox" type="HBoxContainer" parent="Control/CenterContainer/VBoxContainer/Attack"]
-margin_right = 62.0
-margin_bottom = 14.0
-
-[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer/Attack/Hbox"]
-margin_right = 8.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 8, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = ">"
-
-[node name="Label2" type="Label" parent="Control/CenterContainer/VBoxContainer/Attack/Hbox"]
-margin_left = 12.0
-margin_right = 62.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 50, 0 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Attack"
+[node name="Attack" parent="Control/CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
 
 [node name="Items" type="CenterContainer" parent="Control/CenterContainer/VBoxContainer"]
 margin_top = 18.0
